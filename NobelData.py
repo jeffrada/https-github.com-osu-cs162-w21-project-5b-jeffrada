@@ -4,17 +4,19 @@
 
 import json
 
-
+"""
+Represents an object that retrieves information from a JSON file
+"""
 class NobelData:
-    """
-    Represents an object that retrieves information from a JSON file
-    """
+
     def __init__(self, json_file):
         self.json_file = json_file
 
         with open(self.json_file, 'r') as infile:
             self.restored_list = json.load(infile)
-
+    """
+    A method that takes year and category and returns the winners
+    """
     def search_nobel(self, year, category):
         sorted_result = []
         for obj in self.restored_list["prizes"]:
