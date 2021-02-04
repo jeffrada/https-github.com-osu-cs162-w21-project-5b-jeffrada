@@ -9,10 +9,9 @@ Represents an object that retrieves information from a JSON file
 """
 class NobelData:
 
-    def __init__(self, json_file):
-        self.json_file = json_file
+    def __init__(self):
 
-        with open(self.json_file, 'r') as infile:
+        with open('nobels.json', 'r') as infile:
             self.restored_list = json.load(infile)
     """
     A method that takes year and category and returns the winners
